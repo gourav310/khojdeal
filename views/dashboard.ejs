@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            td,th {
+                margin: auto;
+}
+            tr {
+                display: flex;
+                margin: auto;
+                /* //flex-direction: column; */
+                 justify-content: center;
+            }
+        </style>
+    </head>
+<body>
+
+<h2>Basic HTML Table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Date of Parsing</th>
+    <th>user Added</th> 
+    <th>user Updated</th>
+    <th>Total Users Parsed</th> 
+  </tr>
+  <tr>
+    <td>21/1/2021</td>
+    <td> <%= arrdoj1.length %></td>
+     <td><%= arr1.length-arrdoj1.length %></td>
+<td> <%= arr1.length %></td>
+  </tr>
+  <tr>
+    <td>22/1/2021</td>
+    <td> <%= arrdoj2.length %></td>
+     <td><%= arr2.length-arrdoj2.length %></td>
+<td> <%= arr2.length %></td>
+  </tr>
+  <tr>
+   
+  </tr>
+</table>
+
+</body>
+</html>

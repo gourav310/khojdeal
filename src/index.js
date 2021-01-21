@@ -1,5 +1,5 @@
 const {userModel,connect} = require("./db")
-
+// const dashboard =require("./dashboard.ejs")
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -71,8 +71,15 @@ app.post('/addData',async(req,res)=>{
 
 
 app.get('/dashboardData',async(req,res)=>{
-    const array = await userModel.find();
-
+    const date1 ="21/1/2021"
+    const date2 ="22/1/2021"
+    const arr1 = await userModel.find({DOU:date1});
+    const arrdoj1 = await userModel.find({DOJ:date1});
+    const arrdoj2 = await userModel.find({DOJ:date2});
+    const arr2 = await userModel.find({DOU:date2});
+    const final = [...arr1,...arr2];
+    // res.send(final);
+    res.render("dashboard.ejs",{arr1,arr2,arrdoj1,arrdoj2})
 })
 
 

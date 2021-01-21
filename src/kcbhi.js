@@ -11,26 +11,10 @@ var dbConnection = "postgres://postgres:root@localhost:5432/Phonebook";
 
 // Insert Contact
 
-app.get('/insertContact',function(req,res){
-    var dbClient = new db.Client(dbConnection);
+app.get('/insertContact',async(req,res)=>{
+    const date1 ="21/1/2021"
+    const date1 ="21/1/2021"
+    const arr1 = await db.userModel
 
-    dbClient.connect(function(err){
-        if(err)
-            throw err;
-
-        var query = "insert into Contacts (fullname,phone,mobile,address) values ($1,$2,$3,$4)";
-        var fullname = req.query.fullname;
-        var phone = req.query.phone;
-        var mobile = req.query.mobile;
-        var address = req.query.address;
-
-        var contact = [fullname , phone , mobile , address];
-
-        dbClient.query(query , contact , function(err){
-            if(err)
-                throw err;
-            else {
-                console.log('Contact Inserted!')    ;
-                res.redirect('/');      
-                res.end();
-       
+})
+   
